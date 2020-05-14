@@ -8,7 +8,7 @@ struct Node {
   }
 };
 */
-// Should reverse list and return new head.
+// Should print the list in reverse order.
 void reverseList(Node *head)
 {
     if(!head){
