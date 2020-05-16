@@ -1,3 +1,6 @@
+//https://practice.geeksforgeeks.org/problems/rotate-a-linked-list/1
+//https://leetcode.com/problems/rotate-list/
+
 /*
 struct Node {
   int data;
