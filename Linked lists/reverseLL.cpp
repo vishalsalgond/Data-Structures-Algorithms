@@ -1,3 +1,5 @@
+https://practice.geeksforgeeks.org/problems/reverse-a-linked-list/1
+
 /*
 struct Node {
   int data;
