@@ -9,6 +9,12 @@ int main() {
 	while(t--){
 	    int n,k;
 	    cin >> n >>k;
+	    
+	    // Create a Double Ended Queue, q that will store indexes of array elements 
+    	    // The queue will store indexes of useful elements in every window and it will 
+    	    // maintain decreasing order of values from front to rear in q, i.e., 
+    	    // a[q.front[]] to a[q.rear()] are sorted in decreasing order 
+    	
 	    vector <int> a(n);
 	    deque <int> q;
 	    for(int i=0;i<n;i++) cin >> a[i];
