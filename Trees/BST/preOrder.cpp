@@ -17,6 +17,8 @@ struct Node
 };
 */
 
+//root --> left --> right
+
 //recursive approach
 void preorder(Node* root)
 {
