@@ -7,22 +7,21 @@
 bool cyclicUtil(int v, bool visited[], 
                 bool *recStack, vector<int> adj[]){
     
-    if(!visited[v]){
+    visited[v] = true;
+    recStack[v] = true;
+    
+    for(int m : adj[v]){
         
-        visited[v] = true;
-        recStack[v] = true;
-        
-        for(auto m : adj[v]){
-            //if not visited and isCyclic
-            if(!visited[m]){
-                if(cyclicUtil(m, visited, recStack, adj)){
-                    return true;
-                }
+        //if not visited and isCyclic
+        if(!visited[m]){
+            if(cyclicUtil(m, visited, recStack, adj)){
+                return true;
             }
-            //if already visited and in recStack
-            if(recStack[m]) return true;
         }
+        //if already visited and in recStack
+        if(recStack[m]) return true;
     }
+    
     recStack[v] = false; //remove vertex from recStack
     return false;
     
@@ -40,8 +39,10 @@ bool isCyclic(int V, vector<int> adj[])
     
     //check for each vertex
     for(int i = 0; i < V; i++){
-        if (cyclicUtil(i, visited, recStack, adj)){
-            return true;
+        if(!visited[i]){
+            if (cyclicUtil(i, visited, recStack, adj)){
+                return true;
+            }
         }
     }
     
