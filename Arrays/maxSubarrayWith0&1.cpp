@@ -2,7 +2,6 @@
 
 int maxLen(int arr[], int n)
 {
-    int dp[n+1];
     map<int, int> mp;
     
     for(int i = 0; i <= n; i++) {
