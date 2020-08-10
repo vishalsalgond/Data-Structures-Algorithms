@@ -16,13 +16,16 @@ public:
         }
         
         for(int i = start; i < candidates.size(); i++) {
-            curr_sum += candidates[i];
-            curr_vec.push_back(candidates[i]);
-            
-            backtrack(candidates, target, curr_sum, curr_vec, i);
-            
-            curr_vec.pop_back();
-            curr_sum -= candidates[i];
+            //do this only when required sum is greates than candidates[i]
+            if(target - curr_sum >= candidates[i]) {
+                curr_sum += candidates[i];
+                curr_vec.push_back(candidates[i]);
+
+                backtrack(candidates, target, curr_sum, curr_vec, i);
+
+                curr_vec.pop_back();
+                curr_sum -= candidates[i];
+            }
         }
     }
         
